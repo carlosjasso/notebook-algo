@@ -1,4 +1,3 @@
-from cgi import test
 import unittest
 from src.sorting import Sorting
 
@@ -23,7 +22,7 @@ class Test_Sorting(unittest.TestCase):
             1093, 3956, 4372, -403, -516, 761, 343, 2137, 292, 3265, 1550, 4419, -233,
             -987, 1327, 2472, 622, 3209, -221, 2412, 1647, 3498, 2824, 326, 2407, -359,
             3191, 4164, -154, 2456, 1484
-        ]
+        ] # generated with https://onlineintegertools.com/create-integer-array
 
     def test_buble_sort(self):
         actual = Sorting.bubbble_sort(self._int_arr)
