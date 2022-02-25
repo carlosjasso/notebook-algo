@@ -3,8 +3,9 @@ import unittest
 from src.sorting import Sorting
 
 class Test_Sorting(unittest.TestCase):
-    def test_buble_sort(self):
-        data = [
+    @classmethod
+    def setUpClass(self):
+        self._int_arr = [
             3705, 1321, -1202, 2668, 4474, -123, -1152, 3486, 2324, -773, 2934,
             2541, 1669, -735, 1784, -5, 1166, 3438, 3197, -653, 3912, 3842, 4482,
             4387, 1300, 2363, 2518, 958, -1094, 2909, 3399, 3599, -339, 371, 795,
@@ -23,6 +24,9 @@ class Test_Sorting(unittest.TestCase):
             -987, 1327, 2472, 622, 3209, -221, 2412, 1647, 3498, 2824, 326, 2407, -359,
             3191, 4164, -154, 2456, 1484
         ]
-        actual = Sorting.bubbble_sort(data)
-        data.sort()
-        self.assertListEqual(actual, data)
+
+    def test_buble_sort(self):
+        actual = Sorting.bubbble_sort(self._int_arr)
+        expected = self._int_arr.copy()
+        expected.sort()
+        self.assertListEqual(actual, expected)
