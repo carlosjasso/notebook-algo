@@ -1,5 +1,5 @@
 class Sorting:
-    def bubbble_sort(arr: list[int]) -> list[int]:
+    def bubble(arr: list[int]) -> list[int]:
         result = arr.copy() # Copy the entered array for it not to be modified
         n = len(result) # take the length of the array to wotk with
         for i in range(n): # traverse through all elements in array by index (0~n)
