@@ -1,7 +1,6 @@
 import unittest
-from datetime import datetime
 from src.sorting import Sorting
-from helper import print_ruled, print_took
+from helper import print_ruled, benchmark_start, benchmark_stop
 from configuration import Configuration
 
 class Test_Sorting(unittest.TestCase):
@@ -15,7 +14,7 @@ class Test_Sorting(unittest.TestCase):
         print_ruled("Testing bubble sort")
         expected = self.config.int_array.copy()
         expected.sort()
-        start = datetime.now()
+        start = benchmark_start()
         actual = Sorting.bubble(self.config.int_array)
-        print_took(start)
+        benchmark_stop(start)
         self.assertListEqual(actual, expected)
