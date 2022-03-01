@@ -12,9 +12,9 @@ class Test_Sorting(unittest.TestCase):
 
     def test_buble_sort(self):
         print_ruled("Testing bubble sort")
-        expected = self.config.int_array.copy()
-        expected.sort()
+        actual = self.config.int_array
+        expected = sorted(actual)
         start = benchmark_start()
-        actual = Sorting.bubble(self.config.int_array)
+        actual = Sorting.bubble(actual)
         benchmark_stop(start)
         self.assertListEqual(actual, expected)
