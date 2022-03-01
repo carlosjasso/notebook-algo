@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Create python venv",
+            "command": "python3.10",
+            "args": [
+                "-m",
+                "venv",
+                "${workspaceFolder}/.venv"
+            ],
+            "type": "process",
+            "problemMatcher": []
+        }
+    ]
+}
