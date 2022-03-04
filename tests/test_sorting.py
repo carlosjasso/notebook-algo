@@ -1,6 +1,6 @@
 import unittest
-from src.sorting import Sorting
-from helper import print_ruled, benchmark_start, benchmark_stop
+from src import sorting
+import helper
 from configuration import Configuration
 
 class Test_Sorting(unittest.TestCase):
@@ -11,10 +11,19 @@ class Test_Sorting(unittest.TestCase):
         self.config = Configuration()
 
     def test_buble_sort(self):
-        print_ruled("Testing bubble sort")
+        helper.print_ruled("Testing bubble sort")
         actual = self.config.int_array
         expected = sorted(actual)
-        start = benchmark_start()
-        actual = Sorting.bubble(actual)
-        benchmark_stop(start)
+        start = helper.benchmark_start()
+        actual = sorting.bubble(actual)
+        helper.benchmark_stop(start)
+        self.assertListEqual(actual, expected)
+
+    def test_insert_sort(self):
+        helper.print_ruled("Testing insert sort")
+        actual = self.config.int_array
+        expected = sorted(actual)
+        start = helper.benchmark_start()
+        actual = sorting.insert(actual)
+        helper.benchmark_stop(start)
         self.assertListEqual(actual, expected)
