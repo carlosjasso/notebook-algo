@@ -24,6 +24,6 @@ class Test_Sorting(unittest.TestCase):
         actual = self.config.int_array
         expected = sorted(actual)
         start = helper.benchmark_start()
-        actual = sorting.insert(actual)
+        actual = sorting.insertion(actual)
         helper.benchmark_stop(start)
         self.assertListEqual(actual, expected)
