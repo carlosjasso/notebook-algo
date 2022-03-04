@@ -10,13 +10,12 @@ def bubble(arr: list[int]) -> list[int]:
             break
     return arr
 
-def insert(arr: list[int]) -> list[int]:
-    for i in range(len(arr)):
-        j = i
-        while j >= 0 and j < (len(arr) - 1):
-            if arr[j + 1] < arr[j]:
-                arr[j + 1], arr[j] = arr[j], arr[j + 1]
-                j -= 1
-            else:
-                break
+def insertion(arr: list[int]) -> list[int]:
+    for i in range(1, len(arr)): # traverse from index 1 to last item of arr
+        key = arr[i] # item to re-locate (if needed)
+        j = i - 1 # reverse iteration index
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j] # swap items
+            j -= 1
+        arr[j + 1] = key # re-locate key item
     return arr
